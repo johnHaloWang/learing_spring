@@ -1,5 +1,7 @@
 package com.udacity.jwdnd.course1.cloudstorage.model;
 
+import com.udacity.jwdnd.course1.cloudstorage.model.view.SignupForm;
+
 /**
  *  userid INT PRIMARY KEY auto_increment,
  *     username VARCHAR(20),
@@ -24,6 +26,13 @@ public class User {
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public User(SignupForm signupForm){
+        this.username = signupForm.getUsername();
+        this.password = signupForm.getPwd();
+        this.firstName = signupForm.getFirstName();
+        this.lastName = signupForm.getLastName();
     }
 
     public Integer getUserId() {
