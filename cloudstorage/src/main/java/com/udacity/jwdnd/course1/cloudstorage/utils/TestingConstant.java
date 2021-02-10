@@ -1,6 +1,7 @@
 package com.udacity.jwdnd.course1.cloudstorage.utils;
 
-import com.udacity.jwdnd.course1.cloudstorage.model.User;
+import com.udacity.jwdnd.course1.cloudstorage.model.data.Note;
+import com.udacity.jwdnd.course1.cloudstorage.model.data.User;
 
 public class TestingConstant {
     public static final String SIGNUP_URL = "/signup";
@@ -56,7 +57,10 @@ public class TestingConstant {
 //        return new Credential(0, "url", "username", "key","password", userId);
 //    }
 //
-//    public static Note getNote(int userId){
-//        return new Note(0, "title", "description", userId);
-//    }
+    public static Note getNote(int userId){
+        return new Note(0, "title", "description", userId);
+    }
+    public static Note getNote(int noteId, int userId){
+        return new Note(noteId, "title", "description", userId);
+    }
 }

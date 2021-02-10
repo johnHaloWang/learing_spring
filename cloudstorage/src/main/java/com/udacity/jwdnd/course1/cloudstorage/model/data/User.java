@@ -1,4 +1,4 @@
-package com.udacity.jwdnd.course1.cloudstorage.model;
+package com.udacity.jwdnd.course1.cloudstorage.model.data;
 
 import com.udacity.jwdnd.course1.cloudstorage.model.view.SignupForm;
 

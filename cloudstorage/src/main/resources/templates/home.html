@@ -61,11 +61,13 @@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+                        <!-- onclick is a java script that make the div appear/disappear  line 65-->
                         <button style="margin: 0.25em;" type="button" class="btn btn-info float-right" onclick="showNoteModal()">
                             + Add a New Note
                         </button>
-
+                        <!-- noteList view -->
                         <div class="table-responsive">
+                            <!-- https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table -->
                             <table class="table table-striped" id="userTable">
                                 <thead>
                                     <tr>
@@ -75,18 +77,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+                                    <tr th:each="note: ${notesList}">
                                         <td>
                                             <button type="button" class="btn btn-success">Edit</button>
-                                            <a class="btn btn-danger">Delete</a>
+                                            <a class="btn btn-danger" th:href="@{/note/delete/(noteId=${note.getNoteId()})}">Delete</a>
+
                                         </td>
-                                        <th scope="row">Example Note Title</th>
-                                        <td>Example Note Description </td>
+                                        <th id="note-display-title" scope="row" th:text="${note.getNoteTitle()}"></th>
+                                        <th id="note-display-description" scope="row" th:text="${note.getNoteDescription()}"></th>
+<!--                                        <td th:text="${note.noteDescription}">Example Note Description </td>-->
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-
+                        <!-- noteList view end -->
                         <div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
