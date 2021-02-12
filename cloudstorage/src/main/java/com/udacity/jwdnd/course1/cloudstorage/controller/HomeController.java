@@ -45,14 +45,14 @@ public class HomeController {
 
         List<Note> notesList = noteService.getAllUserNotes(userId);
 
-        for(int i = 0; i< 3; i++) {
-            notesList.add(TestingConstant.getNote(i, userId));
-        }
+//        for(int i = 0; i< 3; i++) {
+//            notesList.add(TestingConstant.getNote(i, userId));
+//        }
 
         model.addAttribute("enS", encryptionService);
         model.addAttribute("notesList", notesList);
-        NoteForm noteForm = new NoteForm();
-        model.addAttribute("note", noteForm);
+        //NoteForm noteForm = new NoteForm();
+        model.addAttribute("note", new NoteForm());
 //        List<Credential> credentials = credentialService.getAllUserCredentials(userId.intValue());
 
 //        model.addAttribute("noteList", notes);

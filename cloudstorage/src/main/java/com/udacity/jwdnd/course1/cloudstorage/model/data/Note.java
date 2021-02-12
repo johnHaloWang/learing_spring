@@ -1,5 +1,8 @@
 package com.udacity.jwdnd.course1.cloudstorage.model.data;
 
+import com.udacity.jwdnd.course1.cloudstorage.model.view.NoteForm;
+import org.thymeleaf.util.StringUtils;
+
 public class Note {
     private int noteId;
     private String noteTitle;
@@ -50,6 +53,14 @@ public class Note {
         this.userId = userId;
     }
 
+    public Note(NoteForm noteForm, int userId){
+        if(!StringUtils.isEmpty(noteForm.getNoteId())){
+            this.noteId = Integer.parseInt(noteForm.getNoteId());
+        }
+        this.noteTitle = noteForm.getNoteTitle();
+        this.noteDescription = noteForm.getNoteDescription();
+        this.userId = userId;
+    }
     @Override
     public String toString() {
         return "Note{" +
